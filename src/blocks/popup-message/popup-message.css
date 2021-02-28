@@ -1,0 +1,14 @@
+.popup-message {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  width: 358px;
+  height: 156px;
+}
+
+@media screen and (max-width: 499px) {
+  .popup-message {
+    width: 210px;
+    height: 120px;
+  }
+}
