@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import api from '../utils/api.js';
 
 import Header from './Header.js';
+import Login from './Login.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
 import EditAvatarPopup from './EditAvatarPopup.js';
@@ -232,7 +233,7 @@ function App () {
               {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
             </Route>
             <Route path="/sign-in">
-
+              <Login />
             </Route>
             <Route path="/sign-up">
 
