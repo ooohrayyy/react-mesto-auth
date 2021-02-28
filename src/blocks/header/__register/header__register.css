@@ -1,0 +1,9 @@
+.header__register {
+  margin-left: auto;
+  color: white;
+  text-decoration: none;
+}
+
+.header__register:hover {
+  opacity: .6;
+}

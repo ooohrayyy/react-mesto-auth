@@ -226,7 +226,7 @@ function App () {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="container root__container">   
-        <Header />
+        <Header status={loggedIn}/>
           <Switch>
             <Route exact path="/">
               {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
