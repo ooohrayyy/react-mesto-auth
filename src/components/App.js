@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import api from '../utils/api.js';
 
 import Header from './Header.js';
@@ -226,15 +226,23 @@ function App () {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="container root__container">   
         <Header />
-        <Main
-          cards={cards}
-          onEditAvatar={handleEditAvatarClick}
-          onEditProfile={handleEditProfileClick}
-          onAddPlace={handleAddPlaceClick}
-          onCardClick={handleCardClick}
-          onCardDelete={handleDeleteCardClick}
-          onCardLike={handleCardLike}
-        />
+        <Route path="/sign-up">
+
+        </Route>
+        <Route path="/sign-in">
+
+        </Route>
+        <Route path="/main">
+          <Main
+            cards={cards}
+            onEditAvatar={handleEditAvatarClick}
+            onEditProfile={handleEditProfileClick}
+            onAddPlace={handleAddPlaceClick}
+            onCardClick={handleCardClick}
+            onCardDelete={handleDeleteCardClick}
+            onCardLike={handleCardLike}
+          />
+        </Route>
         <Footer />
       </div>
       <EditProfilePopup
