@@ -228,27 +228,27 @@ function App () {
       <div className="container root__container">   
         <Header />
           <Switch>
-          <Route exact path="/">
-            {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
-          </Route>
-          <Route path="/sign-in">
+            <Route exact path="/">
+              {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
+            </Route>
+            <Route path="/sign-in">
 
-          </Route>
-          <Route path="/sign-up">
+            </Route>
+            <Route path="/sign-up">
 
-          </Route>
-          <Route path="/main">
-            <Main
-              cards={cards}
-              onEditAvatar={handleEditAvatarClick}
-              onEditProfile={handleEditProfileClick}
-              onAddPlace={handleAddPlaceClick}
-              onCardClick={handleCardClick}
-              onCardDelete={handleDeleteCardClick}
-              onCardLike={handleCardLike}
-            />
-          </Route>
-        </Switch>
+            </Route>
+            <Route path="/main">
+              <Main
+                cards={cards}
+                onEditAvatar={handleEditAvatarClick}
+                onEditProfile={handleEditProfileClick}
+                onAddPlace={handleAddPlaceClick}
+                onCardClick={handleCardClick}
+                onCardDelete={handleDeleteCardClick}
+                onCardLike={handleCardLike}
+              />
+            </Route>
+          </Switch>
         <Footer />
       </div>
       <EditProfilePopup
