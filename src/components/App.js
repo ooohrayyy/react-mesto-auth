@@ -249,7 +249,7 @@ function App () {
               />
             </Route>
           </Switch>
-        <Footer />
+        {loggedIn && (<Footer />)}
       </div>
       <EditProfilePopup
         state={editProfileState}
