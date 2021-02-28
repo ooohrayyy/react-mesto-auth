@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import api from '../utils/api.js';
 
 import Header from './Header.js';
@@ -19,6 +19,7 @@ function App () {
 
   // -- Общие состояния
 
+  const [loggedIn, setLoggedIn] = React.useState(false); // Статус пользователя в системе
   const [currentUser, setCurrentUser] = React.useState({ name: '', about: '' }); // Активный пользователь
   const [cards, setCards] = React.useState([]); // Массив карточек
   const [selectedCard, setSelectedCard] = React.useState({}); // Выбранная карточка
@@ -226,23 +227,28 @@ function App () {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="container root__container">   
         <Header />
-        <Route path="/sign-up">
+          <Switch>
+          <Route exact path="/">
+            {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
+          </Route>
+          <Route path="/sign-in">
 
-        </Route>
-        <Route path="/sign-in">
+          </Route>
+          <Route path="/sign-up">
 
-        </Route>
-        <Route path="/main">
-          <Main
-            cards={cards}
-            onEditAvatar={handleEditAvatarClick}
-            onEditProfile={handleEditProfileClick}
-            onAddPlace={handleAddPlaceClick}
-            onCardClick={handleCardClick}
-            onCardDelete={handleDeleteCardClick}
-            onCardLike={handleCardLike}
-          />
-        </Route>
+          </Route>
+          <Route path="/main">
+            <Main
+              cards={cards}
+              onEditAvatar={handleEditAvatarClick}
+              onEditProfile={handleEditProfileClick}
+              onAddPlace={handleAddPlaceClick}
+              onCardClick={handleCardClick}
+              onCardDelete={handleDeleteCardClick}
+              onCardLike={handleCardLike}
+            />
+          </Route>
+        </Switch>
         <Footer />
       </div>
       <EditProfilePopup
