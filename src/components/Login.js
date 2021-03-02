@@ -28,6 +28,8 @@ function Login () {
     setFormValidity(evt.currentTarget.checkValidity());
   }
 
+  // * Возвращаемое значение
+
   return (
     <form className="form form_place_screen" noValidate onChange={handleChange}>
       <h1 className="form__heading form__heading_place_screen">Вход</h1>
