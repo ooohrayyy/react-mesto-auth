@@ -29,9 +29,10 @@ function Login () {
   }
 
   return (
-    <form className="form" noValidate onChange={handleChange}>
+    <form className="form form_place_screen" noValidate onChange={handleChange}>
+      <h1 className="form__heading form__heading_place_screen">Вход</h1>
       <Input
-        inputModifier="input_login_email"
+        inputModifier="input_login_email form__input_place_screen input_place_screen"
         inputName="login_email"
         inputValue={email}
         inputType="email"
@@ -42,7 +43,7 @@ function Login () {
         onValueChange={handleEmailChange}
       />
       <Input inputType="password"
-        inputModifier="input_login_password"
+        inputModifier="input_login_password form__input_place_screen input_place_screen"
         inputName="login_password"
         inputValue={password}
         inputType="password"
@@ -53,7 +54,7 @@ function Login () {
         onInputValidityChange={setPasswordValidity}
         onValueChange={handlePasswordChange}
       />
-      <button className="form__button button" type="submit" disabled={!formValidity}>Войти</button>
+      <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>Войти</button>
     </form>
   );
 }

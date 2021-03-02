@@ -17,8 +17,10 @@
 /* Подключаем блок form и его компоненты */
 
 @import url(blocks/form/form.css);
+@import url(blocks/form/_place/form_place_screen.css);
 @import url(blocks/form/__heading/form__heading.css);
-@import url(blocks/form/__heading/_delete/form__heading_delete.css);
+@import url(blocks/form/__heading/_place/form__heading_place_screen.css);
+@import url(blocks/form/__heading/_place/form__heading_place_delete.css);
 @import url(blocks/form/__refresh/form__refresh.css);
 @import url(blocks/form/__input/form__input.css);
 @import url(blocks/form/__button/form__button.css);
@@ -32,13 +34,15 @@
 /* Подключаем блок input и его компоненты */
 
 @import url(blocks/input/input.css);
+@import url(blocks/input/_place/input_place_screen.css);
 @import url(blocks/input/_invalid/input_invalid.css);
 @import url(blocks/input/__error/input__error.css);
 
 /* Подключаем блок button и его компоненты */
 
 @import url(blocks/button/button.css);
-@import url(blocks/button/_delete/button_delete.css);
+@import url(blocks/button/_place/button_place_screen.css);
+@import url(blocks/button/_place/button_place_delete.css);
 
 /* -- Подключаем основные компоненты */
 
