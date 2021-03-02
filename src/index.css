@@ -12,6 +12,36 @@
 @import url(blocks/root/__container/root__container.css);
 @import url(blocks/root/__popup/root__popup.css);
 
+/* -- Подключаем компоненты UI */
+
+/* Подключаем блок form и его компоненты */
+
+@import url(blocks/form/form.css);
+@import url(blocks/form/__heading/form__heading.css);
+@import url(blocks/form/__heading/_delete/form__heading_delete.css);
+@import url(blocks/form/__refresh/form__refresh.css);
+@import url(blocks/form/__input/form__input.css);
+@import url(blocks/form/__button/form__button.css);
+
+/* Подключаем блок close-btn и его компоненты */
+
+@import url(blocks/close-btn/close-btn.css);
+@import url(blocks/close-btn/_place/close-btn_place_form.css);
+@import url(blocks/close-btn/_place/close-btn_place_fullpic.css);
+
+/* Подключаем блок input и его компоненты */
+
+@import url(blocks/input/input.css);
+@import url(blocks/input/_invalid/input_invalid.css);
+@import url(blocks/input/__error/input__error.css);
+
+/* Подключаем блок button и его компоненты */
+
+@import url(blocks/button/button.css);
+@import url(blocks/button/_delete/button_delete.css);
+
+/* -- Подключаем основные компоненты */
+
 /* Подключаем блок container и его компоненты */
 
 @import url(blocks/container/container.css);
@@ -63,32 +93,6 @@
 
 @import url(blocks/footer/footer.css);
 @import url(blocks/footer/__text/footer__text.css);
-
-/* Подключаем блок form и его компоненты */
-
-@import url(blocks/form/form.css);
-@import url(blocks/form/__heading/form__heading.css);
-@import url(blocks/form/__heading/_delete/form__heading_delete.css);
-@import url(blocks/form/__refresh/form__refresh.css);
-@import url(blocks/form/__input/form__input.css);
-@import url(blocks/form/__button/form__button.css);
-
-/* Подключаем блок close-btn и его компоненты */
-
-@import url(blocks/close-btn/close-btn.css);
-@import url(blocks/close-btn/_place/close-btn_place_form.css);
-@import url(blocks/close-btn/_place/close-btn_place_fullpic.css);
-
-/* Подключаем блок input и его компоненты */
-
-@import url(blocks/input/input.css);
-@import url(blocks/input/_invalid/input_invalid.css);
-@import url(blocks/input/__error/input__error.css);
-
-/* Подключаем блок button и его компоненты */
-
-@import url(blocks/button/button.css);
-@import url(blocks/button/_delete/button_delete.css);
 
 /* Подключаем блок popup и его компоненты */
 
