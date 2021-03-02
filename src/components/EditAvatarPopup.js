@@ -50,7 +50,7 @@ function EditAvatarPopup (props) {
       onSubmit={handleSubmit}
       onClose={handleClose}>
       <Input
-        inputModifier="popup__input_avatar"
+        inputModifier="input_avatar"
         inputName="avatar"
         inputValue={link}
         inputType="url"

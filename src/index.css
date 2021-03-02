@@ -19,33 +19,6 @@
 @import url(blocks/container/__header/container__header.css);
 @import url(blocks/container/__footer/container__footer.css);
 
-/* Подключаем блок popup и его компоненты */
-
-@import url(blocks/popup/popup.css);
-@import url(blocks/popup/_opened/popup_opened.css);
-@import url(blocks/popup/__container/popup__container.css);
-@import url(blocks/popup/__close/popup__close.css);
-@import url(blocks/popup/__refresh/popup__refresh.css);
-@import url(blocks/popup/__close/_fullpic/popup__close_fullpic.css);
-@import url(blocks/popup/__heading/popup__heading.css);
-@import url(blocks/popup/__heading/_delete/popup__heading_delete.css);
-@import url(blocks/popup/__input/popup__input.css);
-@import url(blocks/popup/__input/_invalid/popup__input_invalid.css);
-@import url(blocks/popup/__button/popup__button.css);
-@import url(blocks/popup/__button/_type/popup__button_type_delete.css);
-@import url(blocks/popup/__input-error/popup__input-error.css);
-@import url(blocks/popup/__figure/popup__figure.css);
-@import url(blocks/popup/__fullpic/popup__fullpic.css);
-@import url(blocks/popup/__caption/popup__caption.css);
-@import url(blocks/popup/__message/popup__message.css);
-
-/* Подключаем блок popup-message и его компоненты */
-
-@import url(blocks/popup-message/popup-message.css);
-@import url(blocks/popup-message/_delete/popup-message_delete.css);
-@import url(blocks/popup-message/__img/popup-message__img.css);
-@import url(blocks/popup-message/__text/popup-message__text.css);
-
 /* Подключаем блок header и его компоненты */
 
 @import url(blocks/header/header.css);
@@ -90,3 +63,47 @@
 
 @import url(blocks/footer/footer.css);
 @import url(blocks/footer/__text/footer__text.css);
+
+/* Подключаем блок form и его компоненты */
+
+@import url(blocks/form/form.css);
+@import url(blocks/form/__heading/form__heading.css);
+@import url(blocks/form/__heading/_delete/form__heading_delete.css);
+@import url(blocks/form/__refresh/form__refresh.css);
+@import url(blocks/form/__input/form__input.css);
+@import url(blocks/form/__button/form__button.css);
+
+/* Подключаем блок close-btn и его компоненты */
+
+@import url(blocks/close-btn/close-btn.css);
+@import url(blocks/close-btn/_place/close-btn_place_form.css);
+@import url(blocks/close-btn/_place/close-btn_place_fullpic.css);
+
+/* Подключаем блок input и его компоненты */
+
+@import url(blocks/input/input.css);
+@import url(blocks/input/_invalid/input_invalid.css);
+@import url(blocks/input/__error/input__error.css);
+
+/* Подключаем блок button и его компоненты */
+
+@import url(blocks/button/button.css);
+@import url(blocks/button/_delete/button_delete.css);
+
+/* Подключаем блок popup и его компоненты */
+
+@import url(blocks/popup/popup.css);
+@import url(blocks/popup/_opened/popup_opened.css);
+@import url(blocks/popup/__container/popup__container.css);
+@import url(blocks/popup/__form/popup__form.css);
+@import url(blocks/popup/__figure/popup__figure.css);
+@import url(blocks/popup/__fullpic/popup__fullpic.css);
+@import url(blocks/popup/__caption/popup__caption.css);
+@import url(blocks/popup/__message/popup__message.css);
+
+/* Подключаем блок popup-message и его компоненты */
+
+@import url(blocks/popup-message/popup-message.css);
+@import url(blocks/popup-message/_delete/popup-message_delete.css);
+@import url(blocks/popup-message/__img/popup-message__img.css);
+@import url(blocks/popup-message/__text/popup-message__text.css);

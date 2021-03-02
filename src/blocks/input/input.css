@@ -1,20 +1,19 @@
-.popup__input {
+.input {
   display: block;
   width: 358px;
   padding-bottom: 14px;
-  margin: 0 auto 20px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   font-size: 14px;
   line-height: 17px;
 }
 
-.popup__input::placeholder {
+.input::placeholder {
   color: #c4c4c4;
 }
 
 @media screen and (max-width: 499px) {
-  .popup__input {
+  .input {
     width: 200px;
     padding-bottom: 13px;
   }

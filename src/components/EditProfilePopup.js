@@ -71,7 +71,7 @@ function EditProfilePopup (props) {
       onClose={handleClose}
     >
       <Input
-        inputModifier="popup__input_name"
+        inputModifier="input_name"
         inputType="text"
         inputName="name"
         inputValue={name}
@@ -82,7 +82,7 @@ function EditProfilePopup (props) {
         onValueChange={handleNameChange}
       />
       <Input
-        inputModifier="popup__input_description"
+        inputModifier="input_description"
         inputType="text"
         inputName="description"
         inputValue={description}

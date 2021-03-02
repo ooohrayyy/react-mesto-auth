@@ -1,4 +1,4 @@
-.popup__refresh {
+.form__refresh {
   position: absolute;
   top: -25px;
   right: -25px;
@@ -15,12 +15,12 @@
   transition: .1s linear;
 }
 
-.popup__refresh:hover {
+.form__refresh:hover {
   opacity: .6;
 }
 
 @media screen and (max-width: 499px) {
-  .popup__refresh {
+  .form__refresh {
     top: -25px;
     right: -20px;
     width: 20px;

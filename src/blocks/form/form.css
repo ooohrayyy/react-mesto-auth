@@ -1,0 +1,12 @@
+.form {
+  width: 430px;
+  min-height: 181px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+@media screen and (max-width: 499px) {
+  .form {
+    width: 240px;
+  }
+}

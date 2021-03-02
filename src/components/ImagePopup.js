@@ -6,7 +6,7 @@ function ImagePopup (props) {
   return (
     <div className={`popup popup-fullpic root__popup ${props.state.open ? 'popup_opened' : ''}`}>
       <figure className="popup__figure">
-        {props.card && (<button className="popup__close popup__close_fullpic" type="button" onClick={props.onClose} />)}
+        {props.card && (<button className="close-btn close-btn_place_fullpic" type="button" onClick={props.onClose} />)}
         <img
           className="popup__fullpic"
           src={props.card ? props.card.link : null}

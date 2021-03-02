@@ -14,7 +14,7 @@ function Input (props) {
   return (
     <>
       <input
-        className={`popup__input ${props.inputModifier} ${(!props.inputValidityState ? 'popup__input_invalid' : '')}`}
+        className={`form__input input ${props.inputModifier} ${(!props.inputValidityState ? 'input_invalid' : '')}`}
         type={props.inputType}
         name={props.inputName}
         value={props.inputValue}
@@ -24,7 +24,7 @@ function Input (props) {
         required
         onChange={handleChange}
       />
-      {!props.inputValidityState && (<span className="popup__input-error">{errorMessage}</span>)}
+      {!props.inputValidityState && (<span className="input__error">{errorMessage}</span>)}
     </>
   );
 }

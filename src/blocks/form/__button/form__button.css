@@ -1,0 +1,9 @@
+.form__button {
+  margin: 48px auto 36px;
+}
+
+@media screen and (max-width: 499px) {
+  .form__button {
+    margin: 30px auto;
+  }
+}
