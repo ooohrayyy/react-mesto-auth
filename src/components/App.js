@@ -1,9 +1,8 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import api from '../utils/api.js';
 
 import ProtectedRoute from './ProtectedRoute.js';
-import Header from './Header.js';
 import Login from './Login.js';
 import Register from './Register.js';
 import Main from './Main.js';
