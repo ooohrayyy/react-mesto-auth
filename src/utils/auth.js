@@ -22,6 +22,21 @@ class Auth {
     .then(res => this._checkResponseData(res))
     .catch(err => console.log(err));
   }
+
+  authorize (data) {
+    return fetch(`${this._baseUrl}/signin`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        password: data.password,
+        email: data.email
+      })
+    })
+    .then(res => this._checkResponseData(res))
+    .catch(err => console.log(err));
+  }
 }
 
 const auth = new Auth({
