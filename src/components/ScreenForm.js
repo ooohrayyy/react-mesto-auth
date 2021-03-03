@@ -14,8 +14,8 @@ function ScreenForm (props) {
 
   // * Переменные
 
-  const headingText = (props.form === register) ? 'Регистрация' : 'Вход';
-  const buttonText = (props.form === register) ? 'Зарегистрироваться' : 'Войти';
+  const headingText = (props.form === 'register') ? 'Регистрация' : 'Вход';
+  const buttonText = (props.form === 'register') ? 'Зарегистрироваться' : 'Войти';
 
   // * Функции
 
@@ -60,6 +60,7 @@ function ScreenForm (props) {
         onValueChange={handlePasswordChange}
       />
       <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>{buttonText}</button>
+      {(props.form === 'register') && (<a className="form__sign-in" href="/sign-in">Уже зарегистрировались? Войти</a>)}
     </form>
   );
 }

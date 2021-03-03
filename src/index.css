@@ -25,6 +25,7 @@
 @import url(blocks/form/__refresh/form__refresh.css);
 @import url(blocks/form/__input/form__input.css);
 @import url(blocks/form/__button/form__button.css);
+@import url(blocks/form/__sign-in/form__sign-in.css);
 
 /* Подключаем блок close-btn и его компоненты */
 

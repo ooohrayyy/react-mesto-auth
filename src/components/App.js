@@ -4,6 +4,7 @@ import api from '../utils/api.js';
 
 import Header from './Header.js';
 import Login from './Login.js';
+import Register from './Register.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
 import EditAvatarPopup from './EditAvatarPopup.js';

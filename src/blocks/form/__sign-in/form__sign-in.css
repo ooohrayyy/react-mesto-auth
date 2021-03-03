@@ -1,0 +1,11 @@
+.form__sign-in {
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form__sign-in:hover {
+  opacity: .6;
+}
