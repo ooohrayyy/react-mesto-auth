@@ -66,7 +66,6 @@ function AddPlacePopup (props) {
       onClose={handleClose}
     >
       <Input
-        inputModifier="input_card-name"
         inputType="text"
         inputName="place"
         inputValue={placeName}

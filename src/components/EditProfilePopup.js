@@ -71,7 +71,6 @@ function EditProfilePopup (props) {
       onClose={handleClose}
     >
       <Input
-        inputModifier="input_name"
         inputType="text"
         inputName="name"
         inputValue={name}

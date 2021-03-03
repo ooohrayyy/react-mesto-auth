@@ -14,7 +14,7 @@ function Input (props) {
   return (
     <>
       <input
-        className={`form__input input ${props.inputModifier} ${(!props.inputValidityState ? 'input_invalid' : '')}`}
+        className={`form__input input ${props.inputModifier || ''} ${(!props.inputValidityState ? 'input_invalid' : '')}`}
         type={props.inputType}
         name={props.inputName}
         value={props.inputValue}
