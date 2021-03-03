@@ -110,9 +110,9 @@
 @import url(blocks/popup/__caption/popup__caption.css);
 @import url(blocks/popup/__message/popup__message.css);
 
-/* Подключаем блок popup-message и его компоненты */
+/* Подключаем блок info и его компоненты */
 
-@import url(blocks/popup-message/popup-message.css);
-@import url(blocks/popup-message/_delete/popup-message_delete.css);
-@import url(blocks/popup-message/__img/popup-message__img.css);
-@import url(blocks/popup-message/__text/popup-message__text.css);
+@import url(blocks/info/info.css);
+@import url(blocks/info/_delete/info_delete.css);
+@import url(blocks/info/__img/info__img.css);
+@import url(blocks/info/__text/info__text.css);
