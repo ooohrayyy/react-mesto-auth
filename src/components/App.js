@@ -236,7 +236,7 @@ function App () {
               <Login />
             </Route>
             <Route path="/sign-up">
-
+              <Register />
             </Route>
             <Route path="/main">
               <Main
