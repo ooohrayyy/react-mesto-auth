@@ -1,7 +1,7 @@
 class Auth {
   constructor (options) {
     this._baseUrl = options.baseUrl;
-    this._token = options.authorization;
+    // this._token = options.authorization;
   }
 
   _checkResponseData (res) { // Проверка ответа от сервера
@@ -9,5 +9,17 @@ class Auth {
       return Promise.reject(`Ошибка: ${res.status}`);
     }
     return res.json();
+  }
+
+  register (data) {
+    return fetch(`${this._baseUrl}/signup`, {
+      method: 'POST',
+      body: JSON.stringify({
+        password: data.password,
+        email: data.email
+      })
+    })
+    .then(res => this._checkResponseData(res))
+    .catch(err => console.log(err));
   }
 }
