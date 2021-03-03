@@ -57,22 +57,6 @@ function App () {
     message: null
   });
 
-  // * Переменные
-
-  const popupProps = { // Пропсы для попапов
-    selectedCard,
-    editProfileState,
-    editAvatarState,
-    addPlaceState,
-    confirmDeleteState,
-    imagePopupState,
-    onUpdateUser: handleUpdateUser,
-    onUpdateAvatar: handleUpdateAvatar,
-    onAddPlaceSubmit: handleAddPlaceSubmit,
-    onDeleteConfirmation: handleCardDelete,
-    onClose: closeAllPopups
-  }
-
   // * Функции
 
   // -- Функции вызова попапов
@@ -213,6 +197,32 @@ function App () {
     setSelectedCard(null);
   }
 
+  // * Объекты пропсов
+
+  const mainProps = { // Пропсы для главного экрана
+    cards,
+    onEditAvatar: handleEditAvatarClick,
+    onEditProfile: handleEditProfileClick,
+    onAddPlace: handleAddPlaceClick,
+    onCardClick: handleCardClick,
+    onCardDelete: handleDeleteCardClick,
+    onCardLike: handleCardLike
+  }
+
+  const popupProps = { // Пропсы для попапов
+    selectedCard,
+    editProfileState,
+    editAvatarState,
+    addPlaceState,
+    confirmDeleteState,
+    imagePopupState,
+    onUpdateUser: handleUpdateUser,
+    onUpdateAvatar: handleUpdateAvatar,
+    onAddPlaceSubmit: handleAddPlaceSubmit,
+    onDeleteConfirmation: handleCardDelete,
+    onClose: closeAllPopups
+  }
+
   // * Эффекты при монтировании компонента
 
   // -- Запросы к серверу
@@ -248,17 +258,8 @@ function App () {
           <ProtectedRoute
             path="/"
             component={Main}
-
             loggedIn={loggedIn}
-            cards={cards}
-
-            onEditAvatar={handleEditAvatarClick}
-            onEditProfile={handleEditProfileClick}
-            onAddPlace={handleAddPlaceClick}
-            onCardClick={handleCardClick}
-            onCardDelete={handleDeleteCardClick}
-            onCardLike={handleCardLike}
-
+            mainProps={mainProps}
             popupProps={popupProps}
           />
         </Switch>
