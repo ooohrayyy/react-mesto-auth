@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Header from './Header.js';
 import ScreenForm from './ScreenForm.js';
 
 function Register () {
   return (
-    <ScreenForm form="register" />
+    <>
+      <Header place="register" />
+      <ScreenForm form="register" />
+    </>
   );
 }
 
