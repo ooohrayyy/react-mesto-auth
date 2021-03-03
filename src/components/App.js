@@ -99,11 +99,49 @@ function App () {
 
     auth.register(data)
       .then(res => {
-        setInfoPopupState({ ...infoPopupState, loading: false, success: true });
+        setInfoPopupState({
+          ...infoPopupState,
+          open: true,
+          loading: false,
+          success: true,
+          message: 'Вы успешно зарегистрировались!'
+        });
         console.log(res);
       })
       .catch(err => {
-        setInfoPopupState({ ...infoPopupState, loading: false, failed: true });
+        setInfoPopupState({
+          ...infoPopupState,
+          open: true,
+          loading: false,
+          failed: true,
+          message: 'Что-то пошло не так! Попробуйте ещё раз'
+        });
+        console.log(err);
+      });
+  }
+
+  function handleLoginSubmit (data) {
+    setInfoPopupState({ ...infoPopupState, open: true, loading: true });
+
+    auth.authorize(data)
+      .then(res => {
+        setInfoPopupState({
+          ...infoPopupState,
+          open: true,
+          loading: false,
+          success: true,
+          message: 'Вы успешно авторизовались!'
+        });
+        console.log(res);
+      })
+      .catch(err => {
+        setInfoPopupState({
+          ...infoPopupState,
+          open: true,
+          loading: false,
+          failed: true,
+          message: 'Что-то пошло не так! Попробуйте ещё раз'
+        });
         console.log(err);
       });
   }
@@ -273,7 +311,7 @@ function App () {
     <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route path="/sign-in">
-          <Login infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
+          <Login infoPopupState={infoPopupState} onLoginSubmit={handleLoginSubmit} onPopupClose={closeAllPopups} />
         </Route>
         <Route path="/sign-up">
           <Register infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />

@@ -21,8 +21,7 @@ class Auth {
         email: data.email
       })
     })
-    .then(res => this._checkResponseData(res))
-    .catch(err => console.log(err));
+    .then(res => this._checkResponseData(res));
   }
 
   authorize (data) {
@@ -36,8 +35,7 @@ class Auth {
         email: data.email
       })
     })
-    .then(res => this._checkResponseData(res))
-    .catch(err => console.log(err));
+    .then(res => this._checkResponseData(res));
   }
 
   getEmail (jwt) {
@@ -48,8 +46,7 @@ class Auth {
         "Authorization": `Bearer ${jwt}`
       }
     })
-    .then(res => this._checkResponseData(res))
-    .catch(err => console.log(err));
+    .then(res => this._checkResponseData(res));
   }
 }
 
