@@ -228,57 +228,59 @@ function App () {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="container root__container">   
-        <Header status={loggedIn}/>
-          <Switch>
-            <Route exact path="/">
-              {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
-            </Route>
-            <Route path="/sign-in">
-              <Login />
-            </Route>
-            <Route path="/sign-up">
-              <Register />
-            </Route>
-            <Route path="/main">
-              <Main
-                cards={cards}
-                onEditAvatar={handleEditAvatarClick}
-                onEditProfile={handleEditProfileClick}
-                onAddPlace={handleAddPlaceClick}
-                onCardClick={handleCardClick}
-                onCardDelete={handleDeleteCardClick}
-                onCardLike={handleCardLike}
-              />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route exact path="/">
+            {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
+          </Route>
+          <Route path="/sign-in">
+            <Header place='login' />
+            <Login />
+          </Route>
+          <Route path="/sign-up">
+            <Header place='register' />
+            <Register />
+          </Route>
+          <Route path="/main">
+            <Header place='main' />
+            <Main
+              cards={cards}
+              onEditAvatar={handleEditAvatarClick}
+              onEditProfile={handleEditProfileClick}
+              onAddPlace={handleAddPlaceClick}
+              onCardClick={handleCardClick}
+              onCardDelete={handleDeleteCardClick}
+              onCardLike={handleCardLike}
+            />
+            <EditProfilePopup
+              state={editProfileState}
+              initialValidityState={true}
+              onUpdateUser={handleUpdateUser}
+              onClose={closeAllPopups}
+            />
+            <EditAvatarPopup
+              state={editAvatarState}
+              initialValidityState={false}
+              onUpdateAvatar={handleUpdateAvatar}
+              onClose={closeAllPopups}
+            />
+            <AddPlacePopup
+              state={addPlaceState}
+              initialValidityState={false}
+              onAddPlaceSubmit={handleAddPlaceSubmit}
+              onClose={closeAllPopups}
+            />
+            <ConfirmDeletePopup
+              card={selectedCard}
+              state={confirmDeleteState}
+              initialValidityState={true}
+              onDeleteConfirmation={handleCardDelete}
+              onClose={closeAllPopups}
+            />
+            <ImagePopup card={selectedCard} state={imagePopupState} onClose={closeAllPopups} />
+          </Route>
+        </Switch>
         {loggedIn && (<Footer />)}
       </div>
-      <EditProfilePopup
-        state={editProfileState}
-        initialValidityState={true}
-        onUpdateUser={handleUpdateUser}
-        onClose={closeAllPopups}
-      />
-      <EditAvatarPopup
-        state={editAvatarState}
-        initialValidityState={false}
-        onUpdateAvatar={handleUpdateAvatar}
-        onClose={closeAllPopups}
-      />
-      <AddPlacePopup
-        state={addPlaceState}
-        initialValidityState={false}
-        onAddPlaceSubmit={handleAddPlaceSubmit}
-        onClose={closeAllPopups}
-      />
-      <ConfirmDeletePopup
-        card={selectedCard}
-        state={confirmDeleteState}
-        initialValidityState={true}
-        onDeleteConfirmation={handleCardDelete}
-        onClose={closeAllPopups}
-      />
-      <ImagePopup card={selectedCard} state={imagePopupState} onClose={closeAllPopups} />
     </CurrentUserContext.Provider>
   );
 }
