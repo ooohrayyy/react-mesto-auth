@@ -23,3 +23,9 @@ class Auth {
     .catch(err => console.log(err));
   }
 }
+
+const auth = new Auth({
+  baseUrl: 'https://auth.nomoreparties.co'
+});
+
+export default auth;
