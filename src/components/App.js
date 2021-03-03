@@ -151,6 +151,12 @@ function App () {
       });
   }
 
+  function handleDeauthorize () { // Деавторизация пользователя
+    localStorage.removeItem('jwt');
+    setLoggedIn(false);
+    document.location.href = './sign-in';
+  }
+
   function handleUpdateAvatar (link) { // Обновление аватарки
     setEditAvatarState({ ...editAvatarState, loading: true });
 
