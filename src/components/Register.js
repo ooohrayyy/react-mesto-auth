@@ -2,10 +2,10 @@ import React from 'react';
 
 import ScreenForm from './ScreenForm.js';
 
-function Login () {
+function Register () {
   return (
-    <ScreenForm form="login" />
+    <ScreenForm form="register" />
   );
 }
 
-export default Login;
+export default Register;

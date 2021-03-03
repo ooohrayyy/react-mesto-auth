@@ -12,6 +12,11 @@ function ScreenForm (props) {
   const [emailValidity, setEmailValidity] = React.useState(true); // Состояние валидности инпута с именем
   const [passwordValidity, setPasswordValidity] = React.useState(true); // Состояние валидности инпута с описанием
 
+  // * Переменные
+
+  const headingText = (props.form === register) ? 'Регистрация' : 'Вход';
+  const buttonText = (props.form === register) ? 'Зарегистрироваться' : 'Войти';
+
   // * Функции
 
   // -- Обработчики формы
@@ -32,7 +37,7 @@ function ScreenForm (props) {
 
   return (
     <form className="form form_place_screen" noValidate onChange={handleChange}>
-      <h1 className="form__heading form__heading_place_screen">{props.heading}</h1>
+      <h1 className="form__heading form__heading_place_screen">{headingText}</h1>
       <Input
         inputModifier="input_place_screen"
         inputName="login_email"
@@ -54,7 +59,7 @@ function ScreenForm (props) {
         onInputValidityChange={setPasswordValidity}
         onValueChange={handlePasswordChange}
       />
-      <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>{props.button}</button>
+      <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>{buttonText}</button>
     </form>
   );
 }
