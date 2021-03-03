@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import api from '../utils/api.js';
 
+import ProtectedRoute from './ProtectedRoute.js';
 import Header from './Header.js';
 import Login from './Login.js';
 import Register from './Register.js';
@@ -278,6 +279,11 @@ function App () {
             />
             <ImagePopup card={selectedCard} state={imagePopupState} onClose={closeAllPopups} />
           </Route>
+          <ProtectedRoute
+            path="/"
+            loggedIn={loggedIn}
+            component={Main}
+          />
         </Switch>
         {loggedIn && (<Footer />)}
       </div>
