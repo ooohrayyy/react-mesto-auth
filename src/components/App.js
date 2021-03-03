@@ -24,6 +24,7 @@ function App () {
 
   const [infoPopupState, setInfoPopupState] = React.useState({ // Состояние попапа входа и регистрации
     open: false,
+    success: false,
     loading: false,
     failed: false,
     message: null
