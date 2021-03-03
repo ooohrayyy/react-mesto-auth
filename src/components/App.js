@@ -94,7 +94,7 @@ function App () {
 
   // -- Обработчики запросов
 
-  function handleRegisterSubmit (data) {
+  function handleRegisterSubmit (data) { // Регистрация пользователя
     setInfoPopupState({ ...infoPopupState, open: true, loading: true });
 
     auth.register(data)
@@ -120,7 +120,7 @@ function App () {
       });
   }
 
-  function handleLoginSubmit (data) {
+  function handleLoginSubmit (data) { // Авторизация пользователя
     setInfoPopupState({ ...infoPopupState, open: true, loading: true });
 
     auth.authorize(data)
