@@ -6,11 +6,6 @@ import ProtectedRoute from './ProtectedRoute.js';
 import Login from './Login.js';
 import Register from './Register.js';
 import Main from './Main.js';
-import EditAvatarPopup from './EditAvatarPopup.js';
-import EditProfilePopup from './EditProfilePopup.js';
-import AddPlacePopup from './AddPlacePopup.js';
-import ConfirmDeletePopup from './ConfirmDeletePopup.js';
-import ImagePopup from "./ImagePopup.js";
 
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
@@ -20,7 +15,7 @@ function App () {
 
   // -- Общие состояния
 
-  const [loggedIn, setLoggedIn] = React.useState(false); // Статус пользователя в системе
+  const [loggedIn, setLoggedIn] = React.useState(true); // Статус пользователя в системе
   const [currentUser, setCurrentUser] = React.useState({ name: '', about: '' }); // Активный пользователь
   const [cards, setCards] = React.useState([]); // Массив карточек
   const [selectedCard, setSelectedCard] = React.useState({}); // Выбранная карточка
@@ -237,42 +232,33 @@ function App () {
           <ProtectedRoute
             path="/"
             component={Main}
+
             loggedIn={loggedIn}
             cards={cards}
+
             onEditAvatar={handleEditAvatarClick}
             onEditProfile={handleEditProfileClick}
             onAddPlace={handleAddPlaceClick}
             onCardClick={handleCardClick}
             onCardDelete={handleDeleteCardClick}
             onCardLike={handleCardLike}
+
+            selectedCard={selectedCard}
+
+            editProfileState={editProfileState}
+            editAvatarState={editAvatarState}
+            addPlaceState={addPlaceState}
+            confirmDeleteState={confirmDeleteState}
+            imagePopupState={imagePopupState}
+
+            onUpdateUser={handleUpdateUser}
+            onUpdateAvatar={handleUpdateAvatar}
+            onAddPlaceSubmit={handleAddPlaceSubmit}
+            onDeleteConfirmation={handleCardDelete}
+
+            onClose={closeAllPopups}
           />
         </Switch>
-        <EditProfilePopup
-          state={editProfileState}
-          initialValidityState={true}
-          onUpdateUser={handleUpdateUser}
-          onClose={closeAllPopups}
-        />
-        <EditAvatarPopup
-          state={editAvatarState}
-          initialValidityState={false}
-          onUpdateAvatar={handleUpdateAvatar}
-          onClose={closeAllPopups}
-        />
-        <AddPlacePopup
-          state={addPlaceState}
-          initialValidityState={false}
-          onAddPlaceSubmit={handleAddPlaceSubmit}
-          onClose={closeAllPopups}
-        />
-        <ConfirmDeletePopup
-          card={selectedCard}
-          state={confirmDeleteState}
-          initialValidityState={true}
-          onDeleteConfirmation={handleCardDelete}
-          onClose={closeAllPopups}
-        />
-        <ImagePopup card={selectedCard} state={imagePopupState} onClose={closeAllPopups} />
       </div>
     </CurrentUserContext.Provider>
   );
