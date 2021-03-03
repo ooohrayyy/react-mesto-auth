@@ -1,4 +1,6 @@
-.form__sign-in {
+.container__sign-in {
+  display: block;
+  margin: 0 auto;
   font-size: 14px;
   line-height: 17px;
   color: #fff;
@@ -6,6 +8,6 @@
   text-decoration: none;
 }
 
-.form__sign-in:hover {
+.container__sign-in:hover {
   opacity: .6;
 }
