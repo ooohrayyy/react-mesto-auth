@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import PopupMessage from './PopupMessage.js';
 import InfoToolTip from './InfoToolTip.js';
 import usePopupListeners from '../utils/usePopupListeners.js';
 
