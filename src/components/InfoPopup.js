@@ -10,7 +10,7 @@ function InfoPopup (props) {
   return (
     <div className={`popup popup-info root__popup ${props.state.open ? 'popup_opened' : ''}`}>
       <div className='popup__tooltip'>
-        {(!props.state.loading && !props.state.failed) &&
+        {(!props.state.loading) &&
         (<button className="close-btn close-btn_place_form" type="button" onClick={props.onClose} />)}
         <InfoToolTip infoModifier="info_place_screen" state={props.state} />
       </div>
