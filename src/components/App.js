@@ -132,6 +132,11 @@ function App () {
           success: true,
           message: 'Вы успешно авторизовались!'
         });
+        localStorage.setItem('jwt', res.token);
+        setLoggedIn(true);
+        setTimeout(() => {
+          document.location.href = './main';
+        }, 1800);
         console.log(res);
       })
       .catch(err => {
