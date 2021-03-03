@@ -57,6 +57,22 @@ function App () {
     message: null
   });
 
+  // * Переменные
+
+  const popupProps = { // Пропсы для попапов
+    selectedCard,
+    editProfileState,
+    editAvatarState,
+    addPlaceState,
+    confirmDeleteState,
+    imagePopupState,
+    onUpdateUser: handleUpdateUser,
+    onUpdateAvatar: handleUpdateAvatar,
+    onAddPlaceSubmit: handleAddPlaceSubmit,
+    onDeleteConfirmation: handleCardDelete,
+    onClose: closeAllPopups
+  }
+
   // * Функции
 
   // -- Функции вызова попапов
@@ -243,20 +259,7 @@ function App () {
             onCardDelete={handleDeleteCardClick}
             onCardLike={handleCardLike}
 
-            selectedCard={selectedCard}
-
-            editProfileState={editProfileState}
-            editAvatarState={editAvatarState}
-            addPlaceState={addPlaceState}
-            confirmDeleteState={confirmDeleteState}
-            imagePopupState={imagePopupState}
-
-            onUpdateUser={handleUpdateUser}
-            onUpdateAvatar={handleUpdateAvatar}
-            onAddPlaceSubmit={handleAddPlaceSubmit}
-            onDeleteConfirmation={handleCardDelete}
-
-            onClose={closeAllPopups}
+            popupProps={popupProps}
           />
         </Switch>
       </div>

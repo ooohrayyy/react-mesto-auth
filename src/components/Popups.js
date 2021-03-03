@@ -5,34 +5,49 @@ import ConfirmDeletePopup from './ConfirmDeletePopup.js';
 import ImagePopup from "./ImagePopup.js";
 
 function Popups (props) {
+  const {
+    selectedCard,
+    editProfileState,
+    editAvatarState,
+    addPlaceState,
+    confirmDeleteState,
+    imagePopupState,
+    onUpdateUser,
+    onUpdateAvatar,
+    onAddPlaceSubmit,
+    onDeleteConfirmation,
+    onClose
+  } = props.popupProps;
+
+
   return (
     <>
       <EditProfilePopup
-        state={props.editProfileState}
+        state={editProfileState}
         initialValidityState={true}
-        onUpdateUser={props.onUpdateUser}
-        onClose={props.onClose}
+        onUpdateUser={onUpdateUser}
+        onClose={onClose}
       />
       <EditAvatarPopup
-        state={props.editAvatarState}
+        state={editAvatarState}
         initialValidityState={false}
-        onUpdateAvatar={props.onUpdateAvatar}
-        onClose={props.onClose}
+        onUpdateAvatar={onUpdateAvatar}
+        onClose={onClose}
       />
       <AddPlacePopup
-        state={props.addPlaceState}
+        state={addPlaceState}
         initialValidityState={false}
-        onAddPlaceSubmit={props.onAddPlaceSubmit}
-        onClose={props.onClose}
+        onAddPlaceSubmit={onAddPlaceSubmit}
+        onClose={onClose}
       />
       <ConfirmDeletePopup
-        card={props.selectedCard}
-        state={props.confirmDeleteState}
+        card={selectedCard}
+        state={confirmDeleteState}
         initialValidityState={true}
-        onDeleteConfirmation={props.onDeleteConfirmation}
-        onClose={props.onClose}
+        onDeleteConfirmation={onDeleteConfirmation}
+        onClose={onClose}
       />
-      <ImagePopup card={props.selectedCard} state={props.imagePopupState} onClose={props.onClose} />
+      <ImagePopup card={selectedCard} state={imagePopupState} onClose={onClose} />
     </>
   );
 }

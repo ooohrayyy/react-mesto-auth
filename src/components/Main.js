@@ -43,22 +43,7 @@ function Main (props) {
         </section>
       </main>
       <Footer />
-      <Popups
-        selectedCard={props.selectedCard}
-
-        editProfileState={props.editProfileState}
-        editAvatarState={props.editAvatarState}
-        addPlaceState={props.addPlaceState}
-        confirmDeleteState={props.confirmDeleteState}
-        imagePopupState={props.imagePopupState}
-
-        onUpdateUser={props.onUpdateUser}
-        onUpdateAvatar={props.onUpdateAvatar}
-        onAddPlaceSubmit={props.onAddPlaceSubmit}
-        onDeleteConfirmation={props.onDeleteConfirmation}
-
-        onClose={props.onClose}
-      />
+      <Popups popupProps={props.popupProps} />
     </>
   );
 }
