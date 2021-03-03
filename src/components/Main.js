@@ -26,33 +26,35 @@ function Main (props) {
 
   return (
     <>
-      <Header place="main" />
-      <main className="main container__main">
-        <section className="profile main__profile">
-          <div className="profile__main">
-            <img className="profile__avatar" src={userInfo.avatar || avatarLoader} alt="Портрет пользователя" />
-            <button className="profile__avatar-button" onClick={onEditAvatar} />
-            <div className="profile__text-info">
-              <h1 className="profile__name">{userInfo.name || 'Загрузка...'}</h1>
-              <button className="profile__edit" type="button" onClick={onEditProfile} />
-              <p className="profile__description">{userInfo.about || 'Пожалуйста, подождите'}</p>
+      <div className="container root__container">
+        <Header place="main" />
+        <main className="main container__main">
+          <section className="profile main__profile">
+            <div className="profile__main">
+              <img className="profile__avatar" src={userInfo.avatar || avatarLoader} alt="Портрет пользователя" />
+              <button className="profile__avatar-button" onClick={onEditAvatar} />
+              <div className="profile__text-info">
+                <h1 className="profile__name">{userInfo.name || 'Загрузка...'}</h1>
+                <button className="profile__edit" type="button" onClick={onEditProfile} />
+                <p className="profile__description">{userInfo.about || 'Пожалуйста, подождите'}</p>
+              </div>
             </div>
-          </div>
-          <button className="profile__add" type="button" onClick={onAddPlace} />
-        </section>
-        <section className="cards main__cards">
-          {cards.map((item) => (
-            <Card
-              item={item}
-              key={item._id}
-              onCardClick={onCardClick}
-              onCardDelete={onCardDelete}
-              onCardLike={onCardLike}
-            />
-          ))}
-        </section>
-      </main>
-      <Footer />
+            <button className="profile__add" type="button" onClick={onAddPlace} />
+          </section>
+          <section className="cards main__cards">
+            {cards.map((item) => (
+              <Card
+                item={item}
+                key={item._id}
+                onCardClick={onCardClick}
+                onCardDelete={onCardDelete}
+                onCardLike={onCardLike}
+              />
+            ))}
+          </section>
+        </main>
+        <Footer />
+      </div>
       <Popups popupProps={props.popupProps} />
     </>
   );

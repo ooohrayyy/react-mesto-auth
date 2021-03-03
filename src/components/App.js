@@ -253,25 +253,45 @@ function App () {
 
   // * Возвращаемое значение
 
+  // return (
+  //   <CurrentUserContext.Provider value={currentUser}>
+  //     <div className="container root__container">   
+  //       <Switch>
+  //         <Route path="/sign-in">
+  //           <Login infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
+  //         </Route>
+  //         <Route path="/sign-up">
+  //           <Register infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
+  //         </Route>
+  //         <ProtectedRoute
+  //           path="/"
+  //           component={Main}
+  //           loggedIn={loggedIn}
+  //           mainProps={mainProps}
+  //           popupProps={popupProps}
+  //         />
+  //       </Switch>
+  //     </div>
+  //   </CurrentUserContext.Provider>
+  // );
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <div className="container root__container">   
-        <Switch>
-          <Route path="/sign-in">
-            <Login infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
-          </Route>
-          <Route path="/sign-up">
-            <Register infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
-          </Route>
-          <ProtectedRoute
-            path="/"
-            component={Main}
-            loggedIn={loggedIn}
-            mainProps={mainProps}
-            popupProps={popupProps}
-          />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/sign-in">
+          <Login infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
+        </Route>
+        <Route path="/sign-up">
+          <Register infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
+        </Route>
+        <ProtectedRoute
+          path="/"
+          component={Main}
+          loggedIn={loggedIn}
+          mainProps={mainProps}
+          popupProps={popupProps}
+        />
+      </Switch>
     </CurrentUserContext.Provider>
   );
 }
