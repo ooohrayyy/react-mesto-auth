@@ -41,7 +41,7 @@ function PopupWithForm (props) {
             {(props.name === 'delete') ? 'Удалить' : 'Сохранить'}
           </button>)}
           {(props.state.loading || props.state.failed) &&
-          (<InfoToolTip infoModifier={infoModifier} state={props.state} message={props.message} />)}
+          (<InfoToolTip infoModifier={infoModifier} state={props.state} />)}
         </form>
     </div>
   );
