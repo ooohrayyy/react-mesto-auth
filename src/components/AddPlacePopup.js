@@ -81,6 +81,7 @@ function AddPlacePopup (props) {
         inputName="link"
         inputValue={placePic}
         inputPlaceholder="Ссылка на картинку"
+        inputMaxLength="200"
         inputValidityState={picValidity}
         onInputValidityChange={setPicValidity}
         onValueChange={handlePlacePicChange}

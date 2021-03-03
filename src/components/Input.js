@@ -19,7 +19,7 @@ function Input (props) {
         name={props.inputName}
         value={props.inputValue}
         placeholder={props.inputPlaceholder}
-        minLength={props.inputMinLength || '2'} maxLength={props.inputMaxLength}
+        minLength={props.inputMinLength || '2'} maxLength={props.inputMaxLength || '40'}
         autoComplete="off"
         required
         onChange={handleChange}

@@ -39,7 +39,6 @@ function Login () {
         inputValue={email}
         inputType="email"
         inputPlaceholder="Email"
-        inputMaxLength="40"
         inputValidityState={emailValidity}
         onInputValidityChange={setEmailValidity}
         onValueChange={handleEmailChange}
@@ -51,7 +50,6 @@ function Login () {
         inputType="password"
         inputPlaceholder="Пароль"
         inputMinLength="6"
-        inputMaxLength="40"
         inputValidityState={passwordValidity}
         onInputValidityChange={setPasswordValidity}
         onValueChange={handlePasswordChange}

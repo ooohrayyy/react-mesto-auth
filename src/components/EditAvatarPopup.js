@@ -54,6 +54,7 @@ function EditAvatarPopup (props) {
         inputValue={link}
         inputType="url"
         inputPlaceholder="Ссылка на фото"
+        inputMaxLength="200"
         inputValidityState={inputValidity}
         onInputValidityChange={setInputValidity}
         onValueChange={handleLinkChange}

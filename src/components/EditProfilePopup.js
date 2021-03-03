@@ -75,7 +75,6 @@ function EditProfilePopup (props) {
         inputName="name"
         inputValue={name}
         inputPlaceholder="Имя"
-        inputMaxLength="40"
         inputValidityState={nameValidity}
         onInputValidityChange={setNameValidity}
         onValueChange={handleNameChange}
