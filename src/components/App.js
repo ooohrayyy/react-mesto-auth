@@ -6,7 +6,6 @@ import ProtectedRoute from './ProtectedRoute.js';
 import Login from './Login.js';
 import Register from './Register.js';
 import Main from './Main.js';
-import Footer from './Footer.js';
 import EditAvatarPopup from './EditAvatarPopup.js';
 import EditProfilePopup from './EditProfilePopup.js';
 import AddPlacePopup from './AddPlacePopup.js';
@@ -248,7 +247,6 @@ function App () {
             onCardLike={handleCardLike}
           />
         </Switch>
-        {loggedIn && (<Footer />)}
         <EditProfilePopup
           state={editProfileState}
           initialValidityState={true}

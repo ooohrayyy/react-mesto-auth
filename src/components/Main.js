@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './Header.js';
 import Card from './Card.js';
+import Footer from './Footer.js';
 
 import avatarLoader from '../resources/images/svgs/avatar-loader.svg';
 
@@ -40,6 +41,7 @@ function Main (props) {
           ))}
         </section>
       </main>
+      <Footer />
     </>
   );
 }
