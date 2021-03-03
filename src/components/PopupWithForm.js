@@ -22,7 +22,8 @@ function PopupWithForm (props) {
   return (
     <div className={`popup popup-${props.name} root__popup ${props.state.open ? 'popup_opened' : ''}`}>
         <form className="form form_place_popup" name={props.name} noValidate onChange={handleChange} onSubmit={props.onSubmit}>
-          {(!props.state.loading && !props.state.failed) && (<button className="close-btn close-btn_place_form" type="button" onClick={props.onClose} />)}
+          {(!props.state.loading && !props.state.failed) &&
+          (<button className="close-btn close-btn_place_form" type="button" onClick={props.onClose} />)}
           {props.state.failed && (<button className="form__refresh" type="button" onClick={handleRefresh} />)}
           <h2
             className={`form__heading ${(props.name === 'delete') ? 'form__heading_place_delete' : ''}`}
