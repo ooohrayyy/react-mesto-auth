@@ -98,8 +98,9 @@ function App () {
     setInfoPopupState({ ...infoPopupState, open: true, loading: true });
 
     auth.register(data)
-      .then(() => {
+      .then(res => {
         setInfoPopupState({ ...infoPopupState, loading: false, success: true });
+        console.log(res);
       })
       .catch(err => {
         setInfoPopupState({ ...infoPopupState, loading: false, failed: true });
@@ -275,7 +276,7 @@ function App () {
           <Login infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
         </Route>
         <Route path="/sign-up">
-          <Register infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
+          <Register infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />
         </Route>
         <ProtectedRoute
           path="/"

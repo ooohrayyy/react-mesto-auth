@@ -7,7 +7,12 @@ function Register (props) {
   return (
     <div className="container root__container">
       <Header place="register" />
-      <ScreenForm form="register" infoPopupState={props.infoPopupState} onPopupClose={props.onPopupClose} />
+      <ScreenForm
+        form="register"
+        infoPopupState={props.infoPopupState}
+        onSubmit={props.onRegisterSubmit}
+        onPopupClose={props.onPopupClose}
+      />
     </div>
   );
 }

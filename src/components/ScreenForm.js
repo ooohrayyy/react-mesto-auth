@@ -34,11 +34,20 @@ function ScreenForm (props) {
     setFormValidity(evt.currentTarget.checkValidity());
   }
 
+  function handleSubmit (evt) { // Сабмит формы
+    evt.preventDefault();
+
+    props.onSubmit({
+      password,
+      email
+    });
+  }
+
   // * Возвращаемое значение
 
   return (
     <>
-      <form className="form form_place_screen" noValidate onChange={handleChange}>
+      <form className="form form_place_screen" noValidate onChange={handleChange} onSubmit={handleSubmit}>
         <h1 className="form__heading form__heading_place_screen">{headingText}</h1>
         <Input
           inputModifier="input_place_screen"
@@ -50,7 +59,7 @@ function ScreenForm (props) {
           onInputValidityChange={setEmailValidity}
           onValueChange={handleEmailChange}
         />
-        <Input inputType="password"
+        <Input
           inputModifier="input_place_screen"
           inputName="login_password"
           inputValue={password}
