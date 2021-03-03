@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Input from './Input.js';
+import InfoPopup from './InfoPopup.js';
 
 function ScreenForm (props) {
   // * Стейт-переменные
@@ -63,6 +64,10 @@ function ScreenForm (props) {
         <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>{buttonText}</button>
       </form>
       {(props.form === 'register') && (<a className="container__sign-in" href="/sign-in">Уже зарегистрировались? Войти</a>)}
+      <InfoPopup
+        state={props.infoPopupState}
+        onClose={props.onPopupClose}
+      />
     </>
   );
 }

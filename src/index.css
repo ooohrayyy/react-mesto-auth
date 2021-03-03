@@ -48,6 +48,7 @@
 /* Подключаем блок info и его компоненты */
 
 @import url(blocks/info/info.css);
+@import url(blocks/info/_place/info_place_screen.css);
 @import url(blocks/info/_place/info_place_popup.css);
 @import url(blocks/info/_place/info_place_delete.css);
 @import url(blocks/info/__img/info__img.css);
@@ -117,3 +118,4 @@
 @import url(blocks/popup/__fullpic/popup__fullpic.css);
 @import url(blocks/popup/__caption/popup__caption.css);
 @import url(blocks/popup/__message/popup__message.css);
+@import url(blocks/popup/__tooltip/popup__tooltip.css);

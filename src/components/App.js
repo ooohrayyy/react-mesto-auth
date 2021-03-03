@@ -22,6 +22,13 @@ function App () {
 
   // -- Состояния попапов
 
+  const [infoPopupState, setInfoPopupState] = React.useState({ // Состояние попапа входа и регистрации
+    open: false,
+    loading: false,
+    failed: false,
+    message: null
+  });
+
   const [editAvatarState, setEditAvatarState] = React.useState({ // Состояние попапа «Редактировать аватар»
     open: false,
     loading: false,
@@ -188,6 +195,7 @@ function App () {
   // -- Другие функции
   
   function closeAllPopups () { // Закрытие всех попапов и обнуление выбранной карточки
+    setInfoPopupState({ ...infoPopupState, open: false });
     setEditAvatarState({ ...editAvatarState, open: false });
     setEditProfileState({ ...editProfileState, open: false });
     setAddPlaceState({ ...addPlaceState, open: false });
@@ -250,10 +258,10 @@ function App () {
       <div className="container root__container">   
         <Switch>
           <Route path="/sign-in">
-            <Login />
+            <Login infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
           </Route>
           <Route path="/sign-up">
-            <Register />
+            <Register infoPopupState={infoPopupState} onPopupClose={closeAllPopups} />
           </Route>
           <ProtectedRoute
             path="/"

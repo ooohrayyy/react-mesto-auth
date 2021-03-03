@@ -1,0 +1,9 @@
+.info_place_screen {
+  margin: 0 auto;
+}
+
+/* @media screen and (max-width: 499px) {
+  .info_place_screen {
+    margin: 0 17px 32px;
+  }
+} */
