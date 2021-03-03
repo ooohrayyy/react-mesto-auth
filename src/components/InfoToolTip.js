@@ -3,7 +3,7 @@ import successImage from '../resources/images/svgs/info-success.svg';
 import errorImage from '../resources/images/svgs/info-error.svg';
 
 function InfoToolTip (props) {
-  let infoImage;
+  let infoImage; // * Переменная иллюстрации
 
   if (props.state.loading) {
     infoImage = loaderImage;
@@ -12,6 +12,8 @@ function InfoToolTip (props) {
   } else if (props.state.failed) {
     infoImage = errorImage;
   }
+
+  // * Возвращаемое значение
 
   return (
     <div className={`info ${props.infoModifier}`}>
