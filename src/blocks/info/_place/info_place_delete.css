@@ -1,9 +1,9 @@
-.info_delete {
+.info_place_delete {
   margin-top: 52px;
 }
 
 @media screen and (max-width: 499px) {
-  .info_delete {
+  .info__place_delete {
     margin-top: 17px;
   }
 }

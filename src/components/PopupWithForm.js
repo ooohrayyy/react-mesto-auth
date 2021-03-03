@@ -1,6 +1,7 @@
 import React from 'react';
 
-import PopupMessage from './PopupMessage.js';
+// import PopupMessage from './PopupMessage.js';
+import InfoToolTip from './InfoToolTip.js';
 import usePopupListeners from '../utils/usePopupListeners.js';
 
 function PopupWithForm (props) {
@@ -16,6 +17,8 @@ function PopupWithForm (props) {
   }
 
   usePopupListeners(props); // * Хук слушателей для попапа
+  
+  const infoModifier = (props.name === 'delete') ? 'info_place_delete' : 'info_place_popup';
 
   // * Возвращаемое значение
 
@@ -38,7 +41,8 @@ function PopupWithForm (props) {
           >
             {(props.name === 'delete') ? 'Удалить' : 'Сохранить'}
           </button>)}
-          {(props.state.loading || props.state.failed) && (<PopupMessage name={props.name} state={props.state} message={props.message} />)}
+          {(props.state.loading || props.state.failed) &&
+          (<InfoToolTip infoModifier={infoModifier} state={props.state} message={props.message} />)}
         </form>
     </div>
   );

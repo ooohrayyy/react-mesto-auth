@@ -1,3 +1,5 @@
+import React from 'react';
+
 import EditAvatarPopup from './EditAvatarPopup.js';
 import EditProfilePopup from './EditProfilePopup.js';
 import AddPlacePopup from './AddPlacePopup.js';
