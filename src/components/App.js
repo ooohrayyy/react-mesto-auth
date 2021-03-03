@@ -94,6 +94,19 @@ function App () {
 
   // -- Обработчики запросов
 
+  function handleRegisterSubmit (data) {
+    setInfoPopupState({ ...infoPopupState, open: true, loading: true });
+
+    auth.register(data)
+      .then(() => {
+        setInfoPopupState({ ...infoPopupState, loading: false, success: true });
+      })
+      .catch(err => {
+        setInfoPopupState({ ...infoPopupState, loading: false, failed: true });
+        console.log(err);
+      });
+  }
+
   function handleUpdateAvatar (link) { // Обновление аватарки
     setEditAvatarState({ ...editAvatarState, loading: true });
 
