@@ -40,6 +40,18 @@ class Auth {
     .then(res => this._checkResponseData(res))
     .catch(err => console.log(err));
   }
+
+  getEmail (jwt) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${jwt}`
+      }
+    })
+    .then(res => this._checkResponseData(res))
+    .catch(err => console.log(err));
+  }
 }
 
 const auth = new Auth({
