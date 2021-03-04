@@ -18,14 +18,9 @@ function Header (props) {
 
   const email = 'email@mail.com'; // E-mail пользователя
 
-  let link = {}; // Свойства ссылки
-
-  if (props.place === 'register') {
-    link.url = './sign-in';
-    link.text = 'Войти';
-  } else if (props.place === 'login') {
-    link.url = './sing-up';
-    link.text = 'Регистрация';
+  const link = { // Свойства ссылки
+    text: (props.place === 'register') ? 'Войти' : 'Регистрация',
+    url: (props.place === 'register') ? './sign-in' : './sign-up'
   }
 
   const menuButtonStyle = menuIsOpen ? 'header__menu-btn header__menu-btn_close' : 'header__menu-btn'; // Класс кнопки меню
