@@ -10,7 +10,7 @@ class Auth {
     return res.json();
   }
 
-  register (data) {
+  register (data) { // Регистрация пользователя
     return fetch(`${this._baseUrl}/signup`, {
       method: 'POST',
       headers: {
@@ -24,7 +24,7 @@ class Auth {
     .then(res => this._checkResponseData(res));
   }
 
-  authorize (data) {
+  authorize (data) { // Авторизация пользователя
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
       headers: {
@@ -38,7 +38,7 @@ class Auth {
     .then(res => this._checkResponseData(res));
   }
 
-  checkCredentials (token) {
+  checkCredentials (token) { // Проверка токена
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       headers: {
