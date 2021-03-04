@@ -1,0 +1,5 @@
+@media screen and (max-width: 499px) {
+  .header__out_place_body {
+    display: none;
+  }
+}
