@@ -6,7 +6,7 @@ function Header (props) {
 
   // * Стейт-переменные
 
-  const [menuIsOpen, setMenuIsOpen] = React.useState(false); // Состояние меню
+  const [menuIsOpen, setMenuIsOpen] = React.useState(true); // Состояние меню
 
   // * Функции
 
@@ -31,7 +31,7 @@ function Header (props) {
     link.text = 'Регистрация';
   }
 
-  const menuButtonStyle = menuIsOpen ? 'header__menu-btn_open' : 'header__menu-btn_closed'; // Класс кнопки меню
+  const menuButtonStyle = menuIsOpen ? 'header__menu-btn' : 'header__menu-btn header__menu-btn_close'; // Класс кнопки меню
 
   // * Возвращаемое значение
 
