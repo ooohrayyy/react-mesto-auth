@@ -137,7 +137,7 @@ function App () {
         localStorage.setItem('jwt', res.token);
         setLoggedIn(true);
         setTimeout(() => {
-          document.location.href = './main';
+          history.push('./main');
         }, 1800);
         console.log(res);
       })
