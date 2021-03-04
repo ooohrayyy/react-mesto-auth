@@ -43,7 +43,7 @@ function Header (props) {
       </menu>)}
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
-        {(props.place === 'main') && (<p className="header__email">{email}</p>)}
+        {(props.place === 'main') && (<p className="header__email header__email_place_body">{email}</p>)}
         <a className={`header__link ${(props.place === 'main') && 'header__link_out'}`} href={link.url}>{link.text}</a>
         {(props.place === 'main') && (<button className={menuButtonStyle} onClick={toggleMenu} />)}
       </div>
