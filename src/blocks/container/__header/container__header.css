@@ -6,7 +6,6 @@
 
 @media screen and (max-width: 499px) {
   .container__header {
-    min-height: 56px;
     margin: 0;
   }
 }
