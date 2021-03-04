@@ -1,4 +1,4 @@
-import usePopupListeners from '../utils/usePopupListeners.js';
+import usePopupListeners from '../../utils/usePopupListeners.js';
 
 function ImagePopup (props) {
   usePopupListeners(props); // * Хук слушателей для попапа

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './Header.js';
-import ScreenForm from './ScreenForm.js';
+import ScreenForm from '../Forms/ScreenForm.js';
 
 function Login (props) {
   return (

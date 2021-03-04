@@ -3,11 +3,11 @@ import React from 'react';
 import Header from './Header.js';
 import Card from './Card.js';
 import Footer from './Footer.js';
-import Popups from './Popups.js';
+import Popups from '../Popups/Popups.js';
 
-import avatarLoader from '../resources/images/svgs/avatar-loader.svg';
+import avatarLoader from '../../resources/images/svgs/avatar-loader.svg';
 
-import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 
 function Main (props) {
   const userInfo = React.useContext(CurrentUserContext); // * Подписка на контекст

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 
 function Card (props) {
   const userInfo = React.useContext(CurrentUserContext); // * Подписка на контекст

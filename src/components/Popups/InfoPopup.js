@@ -1,6 +1,6 @@
-import InfoToolTip from './InfoToolTip.js';
+import InfoToolTip from '../Forms/InfoToolTip.js';
 
-import usePopupListeners from '../utils/usePopupListeners.js';
+import usePopupListeners from '../../utils/usePopupListeners.js';
 
 function InfoPopup (props) {
   usePopupListeners(props); // * Хук слушателей для попапа

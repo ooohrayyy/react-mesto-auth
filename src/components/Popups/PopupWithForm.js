@@ -1,7 +1,7 @@
 import React from 'react';
 
-import InfoToolTip from './InfoToolTip.js';
-import usePopupListeners from '../utils/usePopupListeners.js';
+import InfoToolTip from '../Forms/InfoToolTip.js';
+import usePopupListeners from '../../utils/usePopupListeners.js';
 
 function PopupWithForm (props) {
   

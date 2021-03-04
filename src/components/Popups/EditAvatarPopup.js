@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PopupWithForm from './PopupWithForm.js';
-import Input from './Input.js';
+import Input from '../Forms/Input.js';
 
 function EditAvatarPopup (props) {
   

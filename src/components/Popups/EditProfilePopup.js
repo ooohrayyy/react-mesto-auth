@@ -1,9 +1,9 @@
 import React from 'react';
 
 import PopupWithForm from './PopupWithForm.js';
-import Input from './Input.js';
+import Input from '../Forms/Input.js';
 
-import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 
 function EditProfilePopup (props) {
   const userInfo = React.useContext(CurrentUserContext); // * Подписка на контекст

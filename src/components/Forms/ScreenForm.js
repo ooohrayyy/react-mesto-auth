@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Input from './Input.js';
-import InfoPopup from './InfoPopup.js';
+import InfoPopup from '../Popups/InfoPopup.js';
 
 function ScreenForm (props) {
   // * Стейт-переменные
