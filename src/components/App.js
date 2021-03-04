@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import auth from '../utils/auth.js';
 import api from '../utils/api.js';
 
@@ -16,10 +16,12 @@ function App () {
 
   // -- Общие состояния
 
-  const [loggedIn, setLoggedIn] = React.useState(true); // Статус пользователя в системе
+  const [loggedIn, setLoggedIn] = React.useState(false); // Статус пользователя в системе
   const [currentUser, setCurrentUser] = React.useState({ name: '', about: '' }); // Активный пользователь
   const [cards, setCards] = React.useState([]); // Массив карточек
   const [selectedCard, setSelectedCard] = React.useState({}); // Выбранная карточка
+
+  const history = useHistory();
 
   // -- Состояния попапов
 
@@ -315,6 +317,13 @@ function App () {
       })
       .catch(err => console.log(err));
   }, []);
+
+  React.useEffect(() => { // Проверка на наличие токена
+    if (localStorage.jwt) {
+      setLoggedIn(true);
+      history.push('./main');
+    }
+  }, [history]);
 
   // * Возвращаемое значение
 
