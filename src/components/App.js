@@ -108,12 +108,20 @@ function App () {
           success: true,
           message: 'Вы успешно зарегистрировались!'
         });
-        console.log(res);
+        setTimeout(() => {
+          setInfoPopupState({
+            ...infoPopupState,
+            open: false,
+            success: false,
+            message: ''
+          });
+        }, 1800);
       })
       .catch(err => {
         setInfoPopupState({
           ...infoPopupState,
           open: true,
+          success: false,
           loading: false,
           failed: true,
           message: 'Что-то пошло не так! Попробуйте ещё раз'
@@ -152,6 +160,7 @@ function App () {
         setInfoPopupState({
           ...infoPopupState,
           open: true,
+          success: false,
           loading: false,
           failed: true,
           message: 'Что-то пошло не так! Попробуйте ещё раз'
