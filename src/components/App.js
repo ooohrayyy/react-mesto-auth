@@ -319,7 +319,7 @@ function App () {
 
   // -- Запросы к серверу
 
-  React.useEffect(() => { // Проверка на наличие токена
+  React.useEffect(() => { // Проверка токена
     if (localStorage.jwt) {
       auth.checkCredentials(localStorage.jwt)
         .then((res) => {
