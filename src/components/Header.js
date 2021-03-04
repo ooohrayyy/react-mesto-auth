@@ -11,17 +11,18 @@ function Header () {
 
   const menuButtonStyle = menuIsOpen ? 'header__menu-btn_open' : 'header__menu-btn_closed';
 
+  let email = 'email@mail.com';
+
   return (
     <header className="container__header header">
       <menu className="header__menu">
-        Email
+        <p className="header__email">{email}</p>
         Ссылка
       </menu>
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
-        Email
+        <p className="header__email">{email}</p>
         Ссылка
-        Кнопка
         <button className={menuButtonStyle} onClick={toggleMenu} />
       </div>
     </header>
