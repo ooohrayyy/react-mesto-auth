@@ -353,7 +353,7 @@ function App () {
   // * Возвращаемое значение
 
   return (
-    <HashRouter basename="/">
+    <HashRouter basename="/react-mesto-auth">
       <CurrentUserContext.Provider value={currentUser}>
         <Switch>
           <Route path="/sign-in">
