@@ -1,0 +1,14 @@
+.header__out {
+  display: block;
+  padding: 0;
+  border: none;
+  margin: auto 0;
+  color: #a9a9a9;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__out:hover {
+  color: #fff;
+  opacity: 1;
+}
