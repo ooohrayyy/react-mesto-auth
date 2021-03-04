@@ -137,6 +137,7 @@ function App () {
         });
         localStorage.setItem('jwt', res.token);
         setLoggedIn(true);
+        setUserEmail(data.email);
         setTimeout(() => {
           history.push('./main');
         }, 1800);
