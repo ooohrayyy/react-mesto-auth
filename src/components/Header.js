@@ -3,26 +3,35 @@ import React from 'react';
 import logo from '../resources/images/svgs/logo.svg';
 
 function Header () {
-  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
-  function toggleMenu () {
+  // * Стейт-переменные
+
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false); // Состояние меню
+
+  // * Функции
+
+  function toggleMenu () { // Открытие/закрытие меню
     setMenuIsOpen(!menuIsOpen);
   }
 
-  const menuButtonStyle = menuIsOpen ? 'header__menu-btn_open' : 'header__menu-btn_closed';
+  // * Переменные
 
-  let email = 'email@mail.com';
+  const menuButtonStyle = menuIsOpen ? 'header__menu-btn_open' : 'header__menu-btn_closed'; // Класс кнопки меню
+
+  let email = 'email@mail.com'; // E-mail пользователя
+
+  // * Возвращаемое значение
 
   return (
     <header className="container__header header">
       <menu className="header__menu">
         <p className="header__email">{email}</p>
-        Ссылка
+        <a className="header__register" src={linkUrl}>{linkText}</a>
       </menu>
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
         <p className="header__email">{email}</p>
-        Ссылка
+        <a className="header__register" src={linkUrl}>{linkText}</a>
         <button className={menuButtonStyle} onClick={toggleMenu} />
       </div>
     </header>
