@@ -142,6 +142,7 @@ function App () {
         }, 1800);
       })
       .catch(err => {
+        console.log(err);
         setInfoPopupState({
           ...infoPopupState,
           open: true,
