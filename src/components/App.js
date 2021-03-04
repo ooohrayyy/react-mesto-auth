@@ -11,7 +11,6 @@ import Main from './Page/Main.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
 function App () {
-
   // * Стейт-переменные
 
   // -- Общие состояния
@@ -97,7 +96,7 @@ function App () {
 
   // -- Обработчики запросов
 
-  function handleRegisterSubmit (data) { // Регистрация пользователя
+  function handleRegister (data) { // Регистрация пользователя
     setInfoPopupState({ ...infoPopupState, open: true, loading: true });
 
     auth.register(data)
@@ -123,7 +122,7 @@ function App () {
       });
   }
 
-  function handleLoginSubmit (data) { // Авторизация пользователя
+  function handleLogin (data) { // Авторизация пользователя
     setInfoPopupState({ ...infoPopupState, open: true, loading: true });
 
     auth.authorize(data)
@@ -284,6 +283,7 @@ function App () {
 
   const mainProps = { // Пропсы для главного экрана
     cards,
+    onLogout: handleLogout,
     onEditAvatar: handleEditAvatarClick,
     onEditProfile: handleEditProfileClick,
     onAddPlace: handleAddPlaceClick,
@@ -292,7 +292,7 @@ function App () {
     onCardLike: handleCardLike
   }
 
-  const popupProps = { // Пропсы для попапов
+  const popupProps = { // Пропсы для главных попапов
     selectedCard,
     editProfileState,
     editAvatarState,
@@ -344,17 +344,26 @@ function App () {
     <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route path="/sign-in">
-          <Login userEmail={userEmail} onLogout={handleLogout} infoPopupState={infoPopupState} onLoginSubmit={handleLoginSubmit} onPopupClose={closeAllPopups} />
+          <Login
+            userEmail={userEmail}
+            onLogin={handleLogin}
+            infoPopupState={infoPopupState}
+            onPopupClose={closeAllPopups}
+          />
         </Route>
         <Route path="/sign-up">
-          <Register userEmail={userEmail} onLogout={handleLogout} infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />
+          <Register
+            userEmail={userEmail}
+            onRegister={handleRegister}
+            infoPopupState={infoPopupState}
+            onPopupClose={closeAllPopups}
+          />
         </Route>
         <ProtectedRoute
           path="/"
           component={Main}
           loggedIn={loggedIn}
           userEmail={userEmail}
-          onLogout={handleLogout}
           mainProps={mainProps}
           popupProps={popupProps}
         />

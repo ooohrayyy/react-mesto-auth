@@ -4,7 +4,6 @@ import PopupWithForm from './PopupWithForm.js';
 import Input from '../Forms/Input.js';
 
 function AddPlacePopup (props) {
-
   // * Стейт-переменные
 
   const [placeName, setPlaceName] = React.useState(''); // Название места

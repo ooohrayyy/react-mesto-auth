@@ -73,7 +73,8 @@ function ScreenForm (props) {
         />
         <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>{buttonText}</button>
       </form>
-      {(props.form === 'register') && (<Link className="container__sign-in" to="./sign-in">Уже зарегистрировались? Войти</Link>)}
+      {(props.form === 'register') &&
+      (<Link className="container__sign-in" to="./sign-in">Уже зарегистрировались? Войти</Link>)}
       <InfoPopup
         state={props.infoPopupState}
         onClose={props.onPopupClose}

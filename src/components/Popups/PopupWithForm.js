@@ -4,7 +4,6 @@ import InfoToolTip from '../Forms/InfoToolTip.js';
 import usePopupListeners from '../../utils/usePopupListeners.js';
 
 function PopupWithForm (props) {
-  
   // * Обработчики формы
 
   function handleChange (evt) { // Изменение валидности формы

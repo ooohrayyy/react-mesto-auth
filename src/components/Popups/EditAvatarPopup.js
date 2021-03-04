@@ -4,7 +4,6 @@ import PopupWithForm from './PopupWithForm.js';
 import Input from '../Forms/Input.js';
 
 function EditAvatarPopup (props) {
-  
   // * Стейт-переменные
 
   const [link, setLink] = React.useState(''); // Адрес файла аватарки

@@ -7,7 +7,6 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 
 function EditProfilePopup (props) {
   const userInfo = React.useContext(CurrentUserContext); // * Подписка на контекст
-
   // * Cтейт-переменные
 
   const [name, setName] = React.useState(''); // Имя пользователя

@@ -4,14 +4,9 @@ import { Link } from 'react-router-dom';
 import logo from '../../resources/images/svgs/logo.svg';
 
 function Header (props) {
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false); // * Стейт-переменная состояния меню
 
-  // * Стейт-переменные
-
-  const [menuIsOpen, setMenuIsOpen] = React.useState(false); // Состояние меню
-
-  // * Функции
-
-  function toggleMenu () { // Открытие/закрытие меню
+  function toggleMenu () { // * Открытие/закрытие меню
     setMenuIsOpen(!menuIsOpen);
   }
 

@@ -6,8 +6,13 @@ import ScreenForm from '../Forms/ScreenForm.js';
 function Login (props) {
   return (
     <div className="container root__container">
-      <Header place="login" userEmail={props.userEmail} onLogout={props.onLogout} />
-      <ScreenForm form="login" infoPopupState={props.infoPopupState} onSubmit={props.onLoginSubmit} onPopupClose={props.onPopupClose} />
+      <Header place="login" userEmail={props.userEmail} />
+      <ScreenForm
+        form="login"
+        onSubmit={props.onLogin}
+        infoPopupState={props.infoPopupState}
+        onPopupClose={props.onPopupClose}
+      />
     </div>
   );
 }

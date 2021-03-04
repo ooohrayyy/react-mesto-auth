@@ -5,8 +5,6 @@ import usePopupListeners from '../../utils/usePopupListeners.js';
 function InfoPopup (props) {
   usePopupListeners(props); // * Хук слушателей для попапа
 
-  // * Возвращаемое значение
-
   return (
     <div className={`popup popup-info root__popup ${props.state.open ? 'popup_opened' : ''}`}>
       <div className='popup__tooltip'>

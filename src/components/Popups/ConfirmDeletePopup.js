@@ -1,7 +1,6 @@
 import PopupWithForm from './PopupWithForm.js';
 
 function ConfirmDeletePopup (props) {
-  
   // * Обработчик сабмита формы
 
   function handleSubmit (evt) {

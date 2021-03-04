@@ -7,7 +7,7 @@ import ConfirmDeletePopup from './ConfirmDeletePopup.js';
 import ImagePopup from "./ImagePopup.js";
 
 function MainPopups (props) {
-  const {
+  const { // * Пропсы из App
     selectedCard,
     editProfileState,
     editAvatarState,
@@ -20,7 +20,6 @@ function MainPopups (props) {
     onDeleteConfirmation,
     onClose
   } = props.popupProps;
-
 
   return (
     <>
