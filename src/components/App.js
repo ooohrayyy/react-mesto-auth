@@ -355,32 +355,32 @@ function App () {
   return (
     <HashRouter basename="/">
       <CurrentUserContext.Provider value={currentUser}>
-      <Switch>
-        <Route path="/sign-in">
-          <Login
+        <Switch>
+          <Route path="/sign-in">
+            <Login
+              userEmail={userEmail}
+              onLogin={handleLogin}
+              infoPopupState={infoPopupState}
+              onPopupClose={closeAllPopups}
+            />
+          </Route>
+          <Route path="/sign-up">
+            <Register
+              userEmail={userEmail}
+              onRegister={handleRegister}
+              infoPopupState={infoPopupState}
+              onPopupClose={closeAllPopups}
+            />
+          </Route>
+          <ProtectedRoute
+            path="/"
+            component={Main}
+            loggedIn={loggedIn}
             userEmail={userEmail}
-            onLogin={handleLogin}
-            infoPopupState={infoPopupState}
-            onPopupClose={closeAllPopups}
+            mainProps={mainProps}
+            popupProps={popupProps}
           />
-        </Route>
-        <Route path="/sign-up">
-          <Register
-            userEmail={userEmail}
-            onRegister={handleRegister}
-            infoPopupState={infoPopupState}
-            onPopupClose={closeAllPopups}
-          />
-        </Route>
-        <ProtectedRoute
-          path="/"
-          component={Main}
-          loggedIn={loggedIn}
-          userEmail={userEmail}
-          mainProps={mainProps}
-          popupProps={popupProps}
-        />
-      </Switch>
+        </Switch>
       </CurrentUserContext.Provider>
     </HashRouter>
   );
