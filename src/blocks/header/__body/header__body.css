@@ -1,6 +1,5 @@
 .header__body {
   display: flex;
-  /* place-content: center; */
   width: 100%;
   min-height: 119px;
   border-bottom: 1px solid rgba(84, 84, 84, .7);
