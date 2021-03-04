@@ -6,7 +6,7 @@ import AddPlacePopup from './AddPlacePopup.js';
 import ConfirmDeletePopup from './ConfirmDeletePopup.js';
 import ImagePopup from "./ImagePopup.js";
 
-function Popups (props) {
+function MainPopups (props) {
   const {
     selectedCard,
     editProfileState,
@@ -54,4 +54,4 @@ function Popups (props) {
   );
 }
 
-export default Popups;
+export default MainPopups;

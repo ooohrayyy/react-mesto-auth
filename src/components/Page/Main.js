@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Header.js';
 import Card from './Card.js';
 import Footer from './Footer.js';
-import Popups from '../Popups/Popups.js';
+import MainPopups from '../Popups/MainPopups.js';
 
 import avatarLoader from '../../resources/images/svgs/avatar-loader.svg';
 
@@ -55,7 +55,7 @@ function Main (props) {
         </main>
         <Footer />
       </div>
-      <Popups popupProps={props.popupProps} />
+      <MainPopups popupProps={props.popupProps} />
     </>
   );
 }
