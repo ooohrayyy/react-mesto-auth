@@ -100,7 +100,7 @@ function App () {
     setInfoPopupState({ ...infoPopupState, open: true, loading: true });
 
     auth.register(data)
-      .then(res => {
+      .then(() => {
         setInfoPopupState({
           ...infoPopupState,
           open: true,
