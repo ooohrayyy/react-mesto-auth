@@ -302,6 +302,17 @@ function App () {
 
   // -- Запросы к серверу
 
+  React.useEffect(() => { // Проверка на наличие токена
+    if (localStorage.jwt) {
+      auth.checkCredentials(localStorage.jwt)
+        .then(() => {
+          setLoggedIn(true);
+          history.push('./main');
+        })
+        .catch(err => console.log(err));
+    }
+  }, [history]);
+
   React.useEffect(() => { // Получение данных о пользователе
     api.fetchUserInfo()
       .then(res => {
@@ -317,13 +328,6 @@ function App () {
       })
       .catch(err => console.log(err));
   }, []);
-
-  React.useEffect(() => { // Проверка на наличие токена
-    if (localStorage.jwt) {
-      setLoggedIn(true);
-      history.push('./main');
-    }
-  }, [history]);
 
   // * Возвращаемое значение
 

@@ -38,12 +38,12 @@ class Auth {
     .then(res => this._checkResponseData(res));
   }
 
-  getEmail (jwt) {
+  checkCredentials (token) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${jwt}`
+        "Authorization": `Bearer ${token}`
       }
     })
     .then(res => this._checkResponseData(res));
