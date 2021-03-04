@@ -1,3 +1,4 @@
 .header__menu-btn_close {
   background-image: url(../../../../resources/images/svgs/close.svg);
+  background-size: 150%;
 }
