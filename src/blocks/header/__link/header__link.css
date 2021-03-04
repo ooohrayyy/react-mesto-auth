@@ -1,9 +1,9 @@
-.header__register {
+.header__link {
   margin-left: auto;
   color: white;
   text-decoration: none;
 }
 
-.header__register:hover {
+.header__link:hover {
   opacity: .6;
 }
