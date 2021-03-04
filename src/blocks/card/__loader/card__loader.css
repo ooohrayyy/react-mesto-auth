@@ -7,7 +7,7 @@
   margin: 31px 23px 30px 23px;
   border: none;
   background-color: white;
-  background-image: url(../../../resources/images/svgs/like-loader.svg);
+  background-image: url(../../../resources/images/svgs/like/like-loader.svg);
   background-position: center;
   background-repeat: no-repeat;
   transition: .1s linear;

@@ -7,7 +7,7 @@
   padding: 0;
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(../../../resources/images/svgs/delete.svg);
+  background-image: url(../../../resources/images/svgs/place/place-delete.svg);
   cursor: pointer;
 }
 

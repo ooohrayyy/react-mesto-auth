@@ -5,7 +5,7 @@ import Card from './Card.js';
 import Footer from './Footer.js';
 import MainPopups from '../Popups/MainPopups.js';
 
-import avatarLoader from '../../resources/images/svgs/avatar-loader.svg';
+import avatarLoader from '../../resources/images/svgs/avatar/avatar-loader.svg';
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 

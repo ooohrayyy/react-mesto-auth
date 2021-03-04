@@ -1,6 +1,6 @@
-import loaderImage from '../../resources/images/svgs/info-loader.svg';
-import successImage from '../../resources/images/svgs/info-success.svg';
-import errorImage from '../../resources/images/svgs/info-error.svg';
+import loaderImage from '../../resources/images/svgs/info/info-loader.svg';
+import successImage from '../../resources/images/svgs/info/info-success.svg';
+import errorImage from '../../resources/images/svgs/info/info-error.svg';
 
 function InfoToolTip (props) {
   let infoImage; // * Переменная иллюстрации
