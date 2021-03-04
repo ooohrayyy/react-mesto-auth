@@ -1,6 +1,6 @@
 .header__link {
-  margin-left: auto;
-  color: white;
+  margin: auto 0 auto auto;
+  color: #fff;
   text-decoration: none;
 }
 

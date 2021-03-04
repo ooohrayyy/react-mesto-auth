@@ -39,13 +39,13 @@ function Header (props) {
     <header className="container__header header">
       {((props.place === 'main') && menuIsOpen) && (<menu className="header__menu">
         <p className="header__email">{email}</p>
-        <a className={`header__link ${(props.place === 'main') && 'header__link_main'}`} src={link.url}>{link.text}</a>
+        <a className={`header__link ${(props.place === 'main') && 'header__link_out'}`} href={link.url}>{link.text}</a>
       </menu>)}
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
-        <p className="header__email">{email}</p>
-        <a className="header__link" src={link.url}>{link.text}</a>
-        <button className={menuButtonStyle} onClick={toggleMenu} />
+        {(props.place === 'main') && (<p className="header__email">{email}</p>)}
+        <a className={`header__link ${(props.place === 'main') && 'header__link_out'}`} href={link.url}>{link.text}</a>
+        {(props.place === 'main') && (<button className={menuButtonStyle} onClick={toggleMenu} />)}
       </div>
     </header>
   );
