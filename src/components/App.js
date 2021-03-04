@@ -140,6 +140,12 @@ function App () {
         setUserEmail(data.email);
         setTimeout(() => {
           history.push('./main');
+          setInfoPopupState({
+            ...infoPopupState,
+            open: false,
+            success: false,
+            message: ''
+          });
         }, 1800);
       })
       .catch(err => {
