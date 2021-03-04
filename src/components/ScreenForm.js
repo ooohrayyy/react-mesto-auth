@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Input from './Input.js';
 import InfoPopup from './InfoPopup.js';
@@ -72,7 +73,7 @@ function ScreenForm (props) {
         />
         <button className="form__button button button_place_screen" type="submit" disabled={!formValidity}>{buttonText}</button>
       </form>
-      {(props.form === 'register') && (<a className="container__sign-in" href="/sign-in">Уже зарегистрировались? Войти</a>)}
+      {(props.form === 'register') && (<Link className="container__sign-in" to="./sign-in">Уже зарегистрировались? Войти</Link>)}
       <InfoPopup
         state={props.infoPopupState}
         onClose={props.onPopupClose}

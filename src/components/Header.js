@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logo from '../resources/images/svgs/logo.svg';
 
@@ -36,7 +37,7 @@ function Header (props) {
         {(props.place === 'main') && (<p className="header__email header__email_place_body">{props.userEmail}</p>)}
         {(props.place === 'main') && (<button className="header__out header__out_place_body" onClick={props.onLogout}>Выйти</button>)}
         {(props.place === 'main') && (<button className={menuButtonStyle} onClick={toggleMenu} />)}
-        {(props.place !== 'main') && (<a className="header__link" href={link.url}>{link.text}</a>)}
+        {(props.place !== 'main') && (<Link className="header__link" to={link.url}>{link.text}</Link>)}
       </div>
     </header>
   );
