@@ -153,10 +153,11 @@ function App () {
       });
   }
 
-  function handleDeauthorize () { // Деавторизация пользователя
+  function handleLogout () { // Деавторизация пользователя
     localStorage.removeItem('jwt');
     setLoggedIn(false);
-    document.location.href = './sign-in';
+    setUserEmail('');
+    history.push('./sign-in');
   }
 
   function handleUpdateAvatar (link) { // Обновление аватарки
@@ -336,16 +337,17 @@ function App () {
     <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route path="/sign-in">
-          <Login userEmail={userEmail} infoPopupState={infoPopupState} onLoginSubmit={handleLoginSubmit} onPopupClose={closeAllPopups} />
+          <Login userEmail={userEmail} onLogout={handleLogout} infoPopupState={infoPopupState} onLoginSubmit={handleLoginSubmit} onPopupClose={closeAllPopups} />
         </Route>
         <Route path="/sign-up">
-          <Register userEmail={userEmail} infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />
+          <Register userEmail={userEmail} onLogout={handleLogout} infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />
         </Route>
         <ProtectedRoute
           path="/"
           component={Main}
           loggedIn={loggedIn}
           userEmail={userEmail}
+          onLogout={handleLogout}
           mainProps={mainProps}
           popupProps={popupProps}
         />

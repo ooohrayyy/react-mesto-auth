@@ -27,7 +27,7 @@ function Main (props) {
   return (
     <>
       <div className="container root__container">
-        <Header place="main" userEmail={props.userEmail} />
+        <Header place="main" userEmail={props.userEmail} onLogout={props.onLogout} />
         <main className="main container__main">
           <section className="profile main__profile">
             <div className="profile__main">
