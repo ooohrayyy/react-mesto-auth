@@ -168,7 +168,7 @@ function App () {
       });
   }
 
-  function handleLogout () { // Деавторизация пользователя
+  function handleSignOut () { // Деавторизация пользователя
     localStorage.removeItem('jwt');
     setLoggedIn(false);
     setUserEmail('');
@@ -292,7 +292,7 @@ function App () {
 
   const mainProps = { // Пропсы для главного экрана
     cards,
-    onLogout: handleLogout,
+    onSignOut: handleSignOut,
     onEditAvatar: handleEditAvatarClick,
     onEditProfile: handleEditProfileClick,
     onAddPlace: handleAddPlaceClick,
