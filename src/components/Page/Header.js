@@ -30,7 +30,7 @@ function Header (props) {
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
         {(props.place === 'main') && (<p className="header__email header__email_place_body">{props.userEmail}</p>)}
-        {(props.place === 'main') && (<button className="header__out header__out_place_body" onClick={props.onLogout}>Выйти</button>)}
+        {(props.place === 'main') && (<button className="header__out header__out_place_body" onClick={props.onSignOut}>Выйти</button>)}
         {(props.place === 'main') && (<button className={menuButtonStyle} onClick={toggleMenu} />)}
         {(props.place !== 'main') && (<Link className="header__link" to={link.url}>{link.text}</Link>)}
       </div>
