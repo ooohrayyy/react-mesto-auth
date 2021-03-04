@@ -14,6 +14,7 @@ function Main (props) {
 
   const { // * Пропсы из App
     cards,
+    onLogout,
     onEditAvatar,
     onEditProfile,
     onAddPlace,
@@ -27,7 +28,7 @@ function Main (props) {
   return (
     <>
       <div className="container root__container">
-        <Header place="main" userEmail={props.userEmail} onLogout={props.onLogout} />
+        <Header place="main" userEmail={props.userEmail} onLogout={onLogout} />
         <main className="main container__main">
           <section className="profile main__profile">
             <div className="profile__main">
