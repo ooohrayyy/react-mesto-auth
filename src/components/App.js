@@ -139,7 +139,6 @@ function App () {
         setTimeout(() => {
           history.push('./main');
         }, 1800);
-        console.log(res);
       })
       .catch(err => {
         setInfoPopupState({
@@ -149,7 +148,6 @@ function App () {
           failed: true,
           message: 'Что-то пошло не так! Попробуйте ещё раз'
         });
-        console.log(err);
       });
   }
 
