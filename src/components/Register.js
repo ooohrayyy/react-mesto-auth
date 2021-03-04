@@ -6,7 +6,7 @@ import ScreenForm from './ScreenForm.js';
 function Register (props) {
   return (
     <div className="container root__container">
-      <Header place="register" />
+      <Header place="register" userEmail={props.userEmail} />
       <ScreenForm
         form="register"
         infoPopupState={props.infoPopupState}

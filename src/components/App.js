@@ -18,6 +18,7 @@ function App () {
 
   const [loggedIn, setLoggedIn] = React.useState(false); // Статус пользователя в системе
   const [currentUser, setCurrentUser] = React.useState({ name: '', about: '' }); // Активный пользователь
+  const [userEmail, setUserEmail] = React.useState(''); // E-mail пользователя
   const [cards, setCards] = React.useState([]); // Массив карточек
   const [selectedCard, setSelectedCard] = React.useState({}); // Выбранная карточка
 
@@ -303,8 +304,9 @@ function App () {
   React.useEffect(() => { // Проверка на наличие токена
     if (localStorage.jwt) {
       auth.checkCredentials(localStorage.jwt)
-        .then(() => {
+        .then((res) => {
           setLoggedIn(true);
+          setUserEmail(res.data.email);
           history.push('./main');
         })
         .catch(err => console.log(err));
@@ -333,15 +335,16 @@ function App () {
     <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route path="/sign-in">
-          <Login infoPopupState={infoPopupState} onLoginSubmit={handleLoginSubmit} onPopupClose={closeAllPopups} />
+          <Login userEmail={userEmail} infoPopupState={infoPopupState} onLoginSubmit={handleLoginSubmit} onPopupClose={closeAllPopups} />
         </Route>
         <Route path="/sign-up">
-          <Register infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />
+          <Register userEmail={userEmail} infoPopupState={infoPopupState} onRegisterSubmit={handleRegisterSubmit} onPopupClose={closeAllPopups} />
         </Route>
         <ProtectedRoute
           path="/"
           component={Main}
           loggedIn={loggedIn}
+          userEmail={userEmail}
           mainProps={mainProps}
           popupProps={popupProps}
         />

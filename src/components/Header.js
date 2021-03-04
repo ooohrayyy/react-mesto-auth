@@ -16,8 +16,6 @@ function Header (props) {
 
   // * Переменные
 
-  const email = 'email@mail.com'; // E-mail пользователя
-
   const link = { // Свойства ссылки
     text: (props.place === 'register') ? 'Войти' : 'Регистрация',
     url: (props.place === 'register') ? './sign-in' : './sign-up'
@@ -30,12 +28,12 @@ function Header (props) {
   return (
     <header className="container__header header">
       {((props.place === 'main') && menuIsOpen) && (<menu className="header__menu">
-        <p className="header__email header__email_place_menu">{email}</p>
+        <p className="header__email header__email_place_menu">{props.userEmail}</p>
         <button className="header__out header__out_place_menu">Выйти</button>
       </menu>)}
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
-        {(props.place === 'main') && (<p className="header__email header__email_place_body">{email}</p>)}
+        {(props.place === 'main') && (<p className="header__email header__email_place_body">{props.userEmail}</p>)}
         {(props.place === 'main') && (<button className="header__out header__out_place_body">Выйти</button>)}
         {(props.place === 'main') && (<button className={menuButtonStyle} onClick={toggleMenu} />)}
         {(props.place !== 'main') && (<a className="header__link" href={link.url}>{link.text}</a>)}
