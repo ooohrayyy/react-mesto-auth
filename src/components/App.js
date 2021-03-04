@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { HashRouter, Switch, Route, useHistory } from 'react-router-dom';
 import auth from '../utils/auth.js';
 import api from '../utils/api.js';
 
@@ -353,7 +353,8 @@ function App () {
   // * Возвращаемое значение
 
   return (
-    <CurrentUserContext.Provider value={currentUser}>
+    <HashRouter basename="/">
+      <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route path="/sign-in">
           <Login
@@ -380,7 +381,8 @@ function App () {
           popupProps={popupProps}
         />
       </Switch>
-    </CurrentUserContext.Provider>
+      </CurrentUserContext.Provider>
+    </HashRouter>
   );
 }
 
