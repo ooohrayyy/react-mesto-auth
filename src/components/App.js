@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import auth from '../utils/auth.js';
 import api from '../utils/api.js';
 
@@ -353,36 +353,34 @@ function App () {
   // * Возвращаемое значение
 
   return (
-    <HashRouter basename="/react-mesto-auth">
-      <CurrentUserContext.Provider value={currentUser}>
-        <Switch>
-          <Route path="/sign-in">
-            <Login
-              userEmail={userEmail}
-              onLogin={handleLogin}
-              infoPopupState={infoPopupState}
-              onPopupClose={closeAllPopups}
-            />
-          </Route>
-          <Route path="/sign-up">
-            <Register
-              userEmail={userEmail}
-              onRegister={handleRegister}
-              infoPopupState={infoPopupState}
-              onPopupClose={closeAllPopups}
-            />
-          </Route>
-          <ProtectedRoute
-            path="/"
-            component={Main}
-            loggedIn={loggedIn}
+    <CurrentUserContext.Provider value={currentUser}>
+      <Switch>
+        <Route path="/sign-in">
+          <Login
             userEmail={userEmail}
-            mainProps={mainProps}
-            popupProps={popupProps}
+            onLogin={handleLogin}
+            infoPopupState={infoPopupState}
+            onPopupClose={closeAllPopups}
           />
-        </Switch>
-      </CurrentUserContext.Provider>
-    </HashRouter>
+        </Route>
+        <Route path="/sign-up">
+          <Register
+            userEmail={userEmail}
+            onRegister={handleRegister}
+            infoPopupState={infoPopupState}
+            onPopupClose={closeAllPopups}
+          />
+        </Route>
+        <ProtectedRoute
+          path="/"
+          component={Main}
+          loggedIn={loggedIn}
+          userEmail={userEmail}
+          mainProps={mainProps}
+          popupProps={popupProps}
+        />
+      </Switch>
+    </CurrentUserContext.Provider>
   );
 }
 
