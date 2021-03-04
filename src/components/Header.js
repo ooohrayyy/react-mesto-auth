@@ -35,8 +35,8 @@ function Header (props) {
   return (
     <header className="container__header header">
       {((props.place === 'main') && menuIsOpen) && (<menu className="header__menu">
-        <p className="header__email">{email}</p>
-        <button className="header__out">Выйти</button>
+        <p className="header__email header__email_place_menu">{email}</p>
+        <button className="header__out header__out_place_menu">Выйти</button>
       </menu>)}
       <div className="header__body">
         <img className="header__logo" src={logo} alt="Логотип Mesto" />
