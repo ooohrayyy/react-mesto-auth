@@ -10,9 +10,6 @@ import Main from './Page/Main.js';
 
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
-// ! Привет команде код-ревью! Работа оказалась неожиданно масштабной — многое пришлось переписывать.
-// ! Кажется, всё работает :)
-
 function App () {
   // * Стейт-переменные
 
