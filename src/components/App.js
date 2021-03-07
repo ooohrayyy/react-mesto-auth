@@ -113,7 +113,7 @@ function App () {
             ...infoPopupState,
             open: false,
             success: false,
-            message: ''
+            message: null
           });
         }, 1800);
       })
@@ -151,7 +151,7 @@ function App () {
             ...infoPopupState,
             open: false,
             success: false,
-            message: ''
+            message: null
           });
         }, 1800);
       })
@@ -270,9 +270,7 @@ function App () {
         const newCards = cards.map(item => item._id === card._id ? newCard : item);
         setCards(newCards);
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => console.log(err));
   }
 
   // -- Другие функции
